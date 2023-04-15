@@ -1,7 +1,6 @@
 import Menu from '../components/menu.component'
-import Header from '../components/header.component'
 
-export default function Layout({ children }) {
+export default function Layout( { children } ) {
     return (
         <>
             <div className="w-[400px] fixed">

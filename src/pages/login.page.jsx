@@ -23,7 +23,7 @@ export default function Login() {
                 </Link>
             </form>
             <div className='hidden items-center justify-center lg:flex lg:w-1/2'>
-                <img src={require('../assets/images/login.png')} className='w-[650px]' />
+                <img src={require( '../assets/images/login.png' )} className='w-[650px]' alt='' />
             </div>
         </div>
     )
