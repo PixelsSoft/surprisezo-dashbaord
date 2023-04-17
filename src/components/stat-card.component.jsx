@@ -1,15 +1,11 @@
-export default function StatCard( { text, backgroundColor, iconBg, iconSrc, title } ) {
-    console.log( backgroundColor )
+export default function StatCard() {
     return (
-        <div className={`${backgroundColor} m-2 font-lato relative text-white w-[262px] rounded-[20px] h-[149px] flex flex-col p-[15px] justify-between`}>
-            <div className='flex justify-between items-center'>
-                <span className='text-[20px] text-[900]'>{text}</span>
-                <div className={`${iconBg} absolute right-0 top-0 w-[95px] height-[60px] flex justify-center rounded-tr-[20px] py-[14px] rounded-bl-[20px]`}>
-                    <img src={iconSrc} alt="" />
-                </div>
+        <div style={{ boxShadow: '5px 10px 16px rgba(0, 0, 0, 0.1)' }} className="bg-[#E3C52480] m-2 font-bold text-white space-y-10 relative flex flex-col w-full md:w-40 lg:w-60 p-4 rounded-[20px]">
+            <div className="flex justify-between">
+                <span>2.0k</span>
+                <img src={require('../assets/icons/usertick.png')} alt='' className="bg-[#826F0D] absolute top-0 right-0 px-4 py-2 rounded-bl-[20px]" />
             </div>
-
-            <h5 className='text-[20px]'>{title}</h5>
+            <span>Total Active Users</span>
         </div>
     )
 }

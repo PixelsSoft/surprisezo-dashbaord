@@ -1,5 +1,5 @@
-import MenuItem from '../components/menu-item.component'
-import ButtonLeftIcon from './button-left-icon.component'
+import { Link } from 'react-router-dom'
+
 export default function Menu() {
     const menuItems = [
         {
@@ -13,36 +13,48 @@ export default function Menu() {
             to: '/gifts'
         },
         {
-            name: 'Discount Coupons',
+            name: 'Discount Coupon',
             icon: require('../assets/icons/discount-coupan.png'),
-            to: '/discount'
+            to: '/discount-coupon'
         },
         {
-            name: 'Quotation',
+            name: 'Quotations',
             icon: require('../assets/icons/quotation.png'),
             to: '/quotation'
         },
         {
-            name: 'User',
+            name: 'Users',
             icon: require('../assets/icons/user.png'),
             to: '/users'
+        },
+        {
+            name: 'Subscriptions',
+            icon: require('../assets/icons/subscription.png'),
+            to: '/subscriptions'
         },
         {
             name: 'Settings',
             icon: require('../assets/icons/settings.png'),
             to: '/settings'
-        },
+        }
     ]
     return (
-        <div className='w-fit z-10 h-screen flex flex-col justify-center items-center p-[27px] font-lato'>
-            <div className='bg-[#5448C8] w-[294px] h-[95%] rounded-[35px] flex flex-col items-center justify-between py-8'>
-                <h2 className='font-spicyrice text-[45px] text-white'>Menu</h2>
-                <div className='space-y-[45px]'>
-                    {menuItems.map(item => (
-                        <MenuItem item={item} />
-                    ))}
+        <div className='h-screen p-4 md:p-8 w-[250px] md:w-fit font-lato fixed'>
+            <div className='bg-[#5448C8] w-11/12 md:w-[280px] flex flex-col justify-evenly h-full items-center text-white rounded-[35px]'>
+                <h1 className='font-spicyrice text-3xl md:text-4xl lg:text-5xl'>Menu</h1>
+                <div className='w-full flex flex-col h-2/4 justify-between items-center'>
+                    {
+                        menuItems.map(item => (
+                            <Link to={item.to}>
+                                <div className='flex items-center w-[150px] md:w-[200px] space-x-4 font-bold'>
+                                    <img src={item.icon} alt='' />
+                                    <h3 className='text-xs md:text-base'>{item.name}</h3>
+                                </div>
+                            </Link>
+                        ))
+                    }
                 </div>
-                <ButtonLeftIcon iconSrc={require('../assets/icons/button-back.png')}>Logout</ButtonLeftIcon>
+                <button className='bg-white rounded-[20px] text-black w-40 md:w-52 py-4'>Logout</button>
             </div>
         </div>
     )
