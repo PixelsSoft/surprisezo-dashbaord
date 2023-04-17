@@ -10,6 +10,9 @@ import Quotations from "./pages/quote.page";
 import User from "./pages/users/users.page";
 import Subscriptions from "./pages/subscription/subscriptions.page";
 import AddSubscription from "./pages/subscription/add-subscription.page";
+import ForgotPassword from "./pages/forgot-password.page";
+import VerifyOtp from "./pages/verify-otp.page";
+import NewPassword from "./pages/new-password.page";
 
 
 export default function App() {
@@ -26,6 +29,9 @@ export default function App() {
           <Route path='/users' element={<User />} />
           <Route path='/subscriptions' element={<Subscriptions />} />
           <Route path='/add-subscription' element={<AddSubscription />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route path='/verify-otp' element={<VerifyOtp />} />
+          <Route path='/new-password' element={<NewPassword />} />
       </Routes>
     </BrowserRouter>
   )
